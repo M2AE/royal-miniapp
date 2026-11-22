@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #09090B;
+    background-image: radial-gradient(ellipse at 15% 0%, rgba(124, 58, 237, 0.10), transparent 42%),
+                      radial-gradient(ellipse at 85% 20%, rgba(191, 149, 63, 0.08), transparent 38%);
+    background-attachment: fixed;
+    color: #ffffff;
+    font-family: 'Vazirmatn', sans-serif;
+    direction: rtl;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'tnum';
+    font-variant-numeric: tabular-nums;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+  }
+}
+
+@layer components {
+  .gold-gradient {
+    background: linear-gradient(135deg, #BF953F 0%, #FCF6BA 25%, #B38728 50%, #FBF5B7 75%, #AA771C 100%);
+  }
+
+  .gold-text {
+    background: linear-gradient(135deg, #BF953F 0%, #FCF6BA 25%, #B38728 50%, #FBF5B7 75%, #AA771C 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .silver-gradient {
+    background: linear-gradient(135deg, #808080 0%, #E8E8E8 25%, #A0A0A0 50%, #E0E0E0 75%, #808080 100%);
+  }
+
+  .silver-text {
+    background: linear-gradient(135deg, #808080 0%, #E8E8E8 25%, #A0A0A0 50%, #E0E0E0 75%, #808080 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .bronze-gradient {
+    background: linear-gradient(135deg, #8B4513 0%, #DEB887 25%, #CD7F32 50%, #F4C982 75%, #8B4513 100%);
+  }
+
+  .bronze-text {
+    background: linear-gradient(135deg, #8B4513 0%, #DEB887 25%, #CD7F32 50%, #F4C982 75%, #8B4513 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .glass-card {
+    background-color: #111115;
+    border: 1px solid rgba(212, 175, 55, 0.18);
+    border-radius: 1rem;
+  }
+}
+
+@layer utilities {
+  .tabular-nums {
+    font-feature-settings: 'tnum';
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #09090B;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #BF953F, #AA771C);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #FCF6BA, #BF953F);
+}
+
+/* Hide scrollbar on mobile */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 0;
+    display: none;
+  }
+}
+
+
+/* Telegram safe-area support and accessible keyboard focus */
+.safe-area-pb {
+  padding-bottom: calc(0.5rem + env(safe-area-inset-bottom, 0px));
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid rgba(252, 246, 186, 0.9);
+  outline-offset: 3px;
+}
+
+#root {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+
+/* Crisp nearest-neighbor rendering for pixel art games */
+.pixel-canvas {
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-crisp-edges;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
